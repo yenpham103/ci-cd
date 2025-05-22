@@ -48,7 +48,80 @@ Thumbs.db
 *.mov
 *.wmv
 
-# Enviroment files
+# Environment files
 .env
+.env.local
+.env.development
+.env.test
+.env.production
 package-lock.json
 **/deployments/rabbitmq
+
+# Database dumps and Redis files
+*.rdb
+*.aof
+dump.rdb
+appendonly.aof
+*.sql
+*.dump
+*.backup
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Docker volumes and data
+docker-compose.override.yml
+.docker/
+volumes/
+
+# Secrets and credentials
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+secrets.json
+credentials.json
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# Build artifacts
+build/
+out/
+*.o
+*.so
+*.dylib
+
+# Coverage reports
+coverage/
+*.lcov
+.nyc_output/
+
+# Dependency directories
+bower_components/
+jspm_packages/
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Optional npm cache directory
+.npm
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity

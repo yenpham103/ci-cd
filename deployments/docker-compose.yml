@@ -1,0 +1,36 @@
+version: '3.9'
+services:
+    rabbitmq:
+        image: rabbitmq:3.8-management-alpine
+        container_name: 'rabbitmq-vahu'
+        ports:
+            - '${RABBITMQ_PORT}:5672'
+            - '${RABBITMQ_MANAGEMENT_PORT}:15672'
+        volumes:
+            - ./rabbitmq/data/:/var/lib/rabbitmq/
+            - ./rabbitmq/log/:/var/log/rabbitmq/
+        environment:
+            RABBITMQ_ERLANG_COOKIE: cluster_cookie
+            RABBITMQ_DEFAULT_USER: '${RABBITMQ_DEFAULT_USER}'
+            RABBITMQ_DEFAULT_PASS: '${RABBITMQ_DEFAULT_PASS}'
+        networks:
+            - support_net
+    redis:
+        image: bitnami/redis:6.2.14
+        container_name: redis-vahu
+        environment:
+            - REDIS_PASSWORD='${REDIS_PASSWORD}'
+            - REDIS_DISABLE_COMMANDS=FLUSHDB,FLUSHALL
+        ports:
+            - '${REDIS_PORT}:6379'
+        volumes:
+            - redis_data:/bitnami/redis/data
+        restart: always
+        networks:
+            - support_net
+volumes:
+    redis_data:
+        driver: local
+networks:
+    support_net:
+        driver: bridge

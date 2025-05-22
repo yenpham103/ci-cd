@@ -1,0 +1,63 @@
+{
+    "name": "support-app-api",
+    "version": "1.0.0",
+    "description": "",
+    "main": "src/server.js",
+    "scripts": {
+        "lint": "eslint src/.",
+        "start": "NODE_ENV=production node ./src/server.js",
+        "dev": "nodemon src/server.js",
+        "format": "prettier --write .",
+        "prepare": "husky install"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "engines": {
+        "node": "18.13.0"
+    },
+    "dependencies": {
+        "@aws-sdk/client-s3": "^3.300.0",
+        "@aws-sdk/s3-request-presigner": "^3.300.0",
+        "@koa/cors": "^4.0.0",
+        "@sentry/node": "^7.102.1",
+        "amqplib": "^0.10.3",
+        "archiver": "^5.3.1",
+        "bcrypt": "^5.1.0",
+        "crypto-js": "^4.2.0",
+        "dotenv": "^16.0.3",
+        "form-data": "^4.0.2",
+        "formidable": "^3.5.4",
+        "isomorphic-fetch": "^3.0.0",
+        "jsonwebtoken": "^9.0.0",
+        "koa": "^2.14.1",
+        "koa-bodyparser": "^4.3.0",
+        "koa-combine-routers": "^4.0.2",
+        "koa-helmet": "^7.0.2",
+        "koa-ratelimit": "^5.1.0",
+        "koa-router": "^12.0.0",
+        "md5": "^2.3.0",
+        "mongoose": "^8.3.1",
+        "mysql2": "^3.0.1",
+        "redis": "^4.6.10",
+        "sequelize": "^6.28.0",
+        "sequelize-cli": "^6.5.2",
+        "zod": "^3.24.2"
+    },
+    "devDependencies": {
+        "eslint": "^8.32.0",
+        "eslint-config-prettier": "^8.6.0",
+        "eslint-plugin-spellcheck": "0.0.20",
+        "husky": "^8.0.3",
+        "lint-staged": "^13.2.0",
+        "nodemon": "^3.0.1",
+        "prettier": "^2.8.3"
+    },
+    "lint-staged": {
+        "*.js": [
+            "npm run lint",
+            "npm run format",
+            "git add ."
+        ]
+    }
+}

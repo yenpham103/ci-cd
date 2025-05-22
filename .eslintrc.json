@@ -1,0 +1,78 @@
+{
+    "env": {
+        "node": true,
+        "browser": true,
+        "commonjs": true,
+        "es2021": true
+    },
+    "extends": ["prettier", "eslint-config-prettier", "eslint:recommended"],
+    "plugins": ["spellcheck"],
+    "overrides": [],
+    "parserOptions": {
+        "ecmaVersion": "latest"
+    },
+    "rules": {
+        "spellcheck/spell-checker": [
+            1,
+            {
+                "comments": false,
+                "strings": true,
+                "identifiers": true,
+                "templates": true,
+                "lang": "en_US",
+                "skipWords": [
+                    // init
+                    "bodyparser",
+                    "Sequelize",
+                    "sequelize",
+                    "readdir",
+                    "timestamps",
+                    "cors",
+                    "mysql",
+                    "dotenv",
+                    "jsonwebtoken",
+                    "func",
+                    "shopify",
+                    "Shopify",
+                    "presigner",
+                    "rabbitmq",
+                    "archiver",
+                    "bsscommerce",
+                    "href",
+                    "unlink",
+                    "nack",
+                    "amqp",
+                    "amqplib",
+                    "localhost",
+                    "mida",
+                    "publishs",
+                    "millis",
+                    "zlib",
+                    "myshopify",
+                    "utf8mb4",
+                    "cancelled",
+                    "charset",
+                    "unicode",
+                    "Satisfiable",
+                    "Unprocessable",
+                    "Graphql",
+                    "Inclusivity",
+                    "redis",
+                    "hmac",
+                    "Hmac",
+                    "Invalid",
+                    "Valid",
+                    "ratelimit",
+                    "vahu",
+                    "upsert",
+                    "Repos",
+                    "repo",
+                    "chanel",
+                    "skype"
+                ],
+                "skipIfMatch": ["http://[^s]*"],
+                "minLength": 4
+            }
+        ]
+    }
+}

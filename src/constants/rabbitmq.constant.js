@@ -1,0 +1,3 @@
+const DOWNLOAD_THEME_QUEUE = 'download_theme_queue';
+
+exports.DOWNLOAD_THEME_QUEUE = DOWNLOAD_THEME_QUEUE;
